@@ -86,12 +86,12 @@
 
 USE mysql;
 
-DROP   DATABASE IF     EXISTS gs_0397605_boxstore;
-CREATE DATABASE IF NOT EXISTS gs_0397605_boxstore
+DROP   DATABASE IF     EXISTS sql_boxstore_project;
+CREATE DATABASE IF NOT EXISTS sql_boxstore_project
 CHARSET='utf8mb4'
 COLLATE='utf8mb4_unicode_ci';
 
-USE gs_0397605_boxstore;
+USE sql_boxstore_project;
 
 
 

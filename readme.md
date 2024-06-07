@@ -16,17 +16,17 @@ I took the following steps to complete the project.
     6. order_item (oi)
     7. orders (o)
 
-## Step 3: Creating the data and inserting the data: `boxstore_build.sql`
+## Step 3: Creating database and inserting data: `boxstore_build.sql`
 * I used SQL to create the database and all tables in it. 
 
 ## Step 4: Creating more Data:
 * I created more data in addition to  the original data. This would give me a more realistic scenario for creating my JOINs later. The following are the tables that I created:
-    1. people (p)
-    2. people_employee (pe)
-    3. geo_address_type (gat)
-    4. geo_country (gco)
-    5. geo_region (grg)
-    6. geo_towncity (gtc)
+    1. geo_address_type (gat)
+    2. geo_country (gco)
+    3. geo_region (grg)
+    4. geo_towncity (gtc)
+    5. people (p)
+    6. people_employee (pe)
     7. tax (t)
 
 ## Step 5: Entity Relationship Diagram ERD: `boxstore_erd.drawio`
