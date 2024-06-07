@@ -16,7 +16,10 @@ I took the following steps to complete the project.
     6. order_item (oi)
     7. orders (o)
 
-## Step 3: Creating more Data:
+## Step 3: Creating the data and inserting the data: `boxstore_build.sql`
+* I used SQL to create the database and all tables in it. 
+
+## Step 4: Creating more Data:
 * I created more data in addition to  the original data. This would give me a more realistic scenario for creating my JOINs later. The following are the tables that I created:
     1. people (p)
     2. people_employee (pe)
@@ -26,7 +29,7 @@ I took the following steps to complete the project.
     6. geo_towncity (gtc)
     7. tax (t)
 
-## Step 4: Entity Relationship Diagram ERD: `boxstore_erd.drawio`
+## Step 5: Entity Relationship Diagram ERD: `boxstore_erd.drawio`
 * An Entity Relationship Diagram (ERD) is a great way to understand the relationship between a dataset with several tables. I used `Draw.io` to create the ERD for this data. This diagram has all the tables that I had used in the project. 
 
 ![alt text](./image/erd.png)
