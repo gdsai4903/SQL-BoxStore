@@ -1310,7 +1310,7 @@ FROM orders o
      JOIN item_type it      ON i.it_id=it.it_id
      JOIN item_price ip     ON oi.item_id=ip.item_id
      JOIN item_inventory ii ON oi.oi_id=ii.oi_id
-WHERE o.order_date BETWEEN ip.ip_beg AND IFNULL(ip_end, CURRENT_TIME)
+WHERE o.order_date BETWEEN ip.ip_beg AND IFNULL(ip_end, o.order_date)
 GROUP BY ii.oi_id
 ;
 
@@ -1395,7 +1395,7 @@ FROM orders__item oi
      JOIN item_type it      ON i.it_id=it.it_id
      JOIN item_price ip     ON oi.item_id=ip.item_id
      JOIN item_inventory ii ON oi.oi_id=ii.oi_id
-WHERE o.order_date BETWEEN ip.ip_beg AND IFNULL(ip_end, CURRENT_TIME)
+WHERE o.order_date BETWEEN ip.ip_beg AND IFNULL(ip_end, o.order_date)
 GROUP BY o.order_id, o.order_no, o.order_date
       ,  i.item_name, i.item_modelno, i.item_barcode
       ,  m.man_id, m.man_name
@@ -1422,7 +1422,7 @@ FROM orders__item oi
      JOIN item_price ip     ON oi.item_id=ip.item_id
      JOIN orders o          ON oi.order_id=o.order_id
      JOIN item_inventory ii ON oi.oi_id=ii.oi_id
-WHERE o.order_date BETWEEN ip.ip_beg AND IFNULL(ip_end, CURRENT_TIME)
+WHERE o.order_date BETWEEN ip.ip_beg AND IFNULL(ip_end, o.order_date)
 GROUP BY oi.order_id
 ;
 SELECT fs.order_id, fs.subtotal
@@ -1438,7 +1438,7 @@ CREATE OR REPLACE VIEW receipt_21_footer_subtotal_taxes  AS
 SELECT fs.order_id, fs.subtotal
      , FORMAT(SUM(fs.subtotal*tax_perc/100), 2) AS tax
 FROM receipt_20_footer_subtotal fs, taxes t
-WHERE fs.order_date BETWEEN t.tax_beg AND IFNULL(t.tax_end, CURRENT_TIME)
+WHERE fs.order_date BETWEEN t.tax_beg AND IFNULL(t.tax_end, fs.order_date)
 GROUP BY fs.order_id
 ;
 SELECT st.order_id, st.tax
